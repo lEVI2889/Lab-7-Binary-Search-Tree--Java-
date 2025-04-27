@@ -1,0 +1,89 @@
+//1
+public static Integer lowestCommonAncestor( BSTNode root, Integer x, Integer y ){
+        // TO DO
+        if(x<root.elem && y<root.elem) {
+            return lowestCommonAncestor(root.left, x, y);
+        }
+        else if(x>root.elem && y>root.elem) {
+            return lowestCommonAncestor(root.right, x, y);
+        }
+        else if(x<=root.elem && y>=root.elem){
+            return root.elem;
+        }
+        else if(x>=root.elem && y<=root.elem){
+            return root.elem;
+        }
+
+        return null;
+    }
+
+//2
+public static String findPath( BSTNode root, Integer key ){
+        // TO DO
+        if(!availability(root.left,key)&&!availability(root.right,key)) {
+            return "No Path Found";
+        }
+        else{
+            return Path(root,key);
+        }
+    }
+    //============================================================================
+    static boolean availability(BSTNode root, Integer key) {
+        if (root == null) {
+            return false;
+        }
+        if (root.elem.equals(key)) {
+            return true;
+        }
+        // Check recursively in the left and right subtrees
+        return availability(root.left, key) || availability(root.right, key);
+    }
+    static String Path(BSTNode root, Integer key){
+        if (key < root.elem) {
+            return "" + root.elem + " " + Path(root.left, key);
+        } else if (key > root.elem) {
+            return "" + root.elem + " " + Path(root.right, key);
+        } else if (key == root.elem) {
+            return "" + root.elem;
+        }
+        return null;
+    }
+
+//3
+public static Integer sumOfLeaves( BSTNode root, Integer sum ){
+        // TO DO
+        int l = sum_mer(root.left);
+        int r = sum_mer(root.right);
+        sum = l+r;
+        return sum; //remove this line
+    }
+    //===============================================================
+    public static Integer sum_mer( BSTNode root){
+        if(root==null) {
+            return 0;
+        }
+        if(root.left==null && root.right==null) {
+            return root.elem;
+        }
+        return sum_mer(root.left)+sum_mer(root.right);
+    }
+
+//4
+public static Integer mirrorSum( BSTNode root ){
+        //TO DO
+        if(root == null) return null;
+        return sum_mer(root.left, root.right); // remove this line
+    }
+    //===============================================================
+    static int sum_mer(BSTNode left, BSTNode right){
+        if(left == null && right == null) return 0;
+        int sum = left.elem + right.elem;
+        if(left.left!=null && right.right!=null){
+            sum += sum_mer(left.left, right.right);
+        }
+        if(left.right!=null && right.left!=null){
+            sum += sum_mer(left.right, right.left);
+        }
+
+        return sum;
+    }
