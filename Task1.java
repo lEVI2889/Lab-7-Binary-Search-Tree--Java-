@@ -7,26 +7,21 @@ public class Task1 {
     // You'll need to find the lowest common ancestor of them and return it
     public static Integer lowestCommonAncestor( BSTNode root, Integer x, Integer y ){
         // TO DO
-
-        return null; //remove this line
-    }
-    //==================================================
-    Integer traveller (BSTNode root, Integer x, Integer y){
-        if(is_right_node(root, x, y)&&is_left_node(root, x, y)){
+        if(x<root.elem && y<root.elem) {
+            return lowestCommonAncestor(root.left, x, y);
+        }
+        else if(x>root.elem && y>root.elem) {
+            return lowestCommonAncestor(root.right, x, y);
+        }
+        else if(x<=root.elem && y>=root.elem){
             return root.elem;
         }
-        return 0;
-    }
-    boolean is_right_node(BSTNode root, Integer x, Integer y){
-        if(x>y){
-            return true;
+        else if(x>=root.elem && y<=root.elem){
+            return root.elem;
         }
-        return false;
+
+        return null;
     }
-    boolean is_left_node(BSTNode root,Integer x, Integer y){
-        if(x<y){
-            return true;
-        }
-        return false;
-    }
+    //==================================================
+
 }

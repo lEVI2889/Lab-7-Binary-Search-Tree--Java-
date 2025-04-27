@@ -45,53 +45,53 @@ public class BinarySearchTreeTester {
         BSTPrinter.printNode(root);
         System.out.println("--------------------------------------------------");
 
-         //First test case is already written for you so, don' change it
-         String t1 = "Task#1 Test#1";
-         System.out.println(":Expected Output: LCA(6,12)=10");
-         Integer out = Task1.lowestCommonAncestor(root,6,12);
-         System.out.println(":  Your Output  : LCA(6,12)="+out);
-         if(out==null || out!=10) failedPrint(t1);
-         else successPrint(t1);
+        //First test case is already written for you so, don' change it
+        String t1 = "Task#1 Test#1";
+        System.out.println(":Expected Output: LCA(6,12)=10");
+        Integer out = Task1.lowestCommonAncestor(root,6,12);
+        System.out.println(":  Your Output  : LCA(6,12)="+out);
+        if(out==null || out!=10) failedPrint(t1);
+        else successPrint(t1);
 
-        // //Write the rest of the test cases yourself
+        //Write the rest of the test cases yourself
 
-         System.out.println("------------------------------");
-        // // Test Case 2 (20,6)
-        // // TO DO
+        System.out.println("------------------------------");
+        // Test Case 2 (20,6)
         String t2 = "Task#1 Test#2";
         System.out.println(":Expected Output: LCA(20,6)=15");
         Integer out2 = Task1.lowestCommonAncestor(root,20,6);
         System.out.println(":  Your Output  : LCA(20,6)="+out2);
-        if(out==null || out!=15) failedPrint(t2);
+        if(out2==null || out2!=15) failedPrint(t2);
         else successPrint(t2);
-         System.out.println("------------------------------");
-         // Test Case 3 (18,22)
-        // // TO DO
+        // TO DO
+        System.out.println("------------------------------");
+        // Test Case 3 (18,22)
         String t3 = "Task#1 Test#3";
         System.out.println(":Expected Output: LCA(18,22)=20");
         Integer out3 = Task1.lowestCommonAncestor(root,18,22);
-        System.out.println(":  Your Output  : LCA(6,12)="+out3);
-        if(out==null || out!=20) failedPrint(t3);
+        System.out.println(":  Your Output  : LCA(18,22)="+out3);
+        if(out3==null || out3!=20) failedPrint(t3);
         else successPrint(t3);
-         System.out.println("------------------------------");
-        // // Test Case 4 (20,25)
-        // // TO DO
+        // TO DO
+        System.out.println("------------------------------");
+        // Test Case 4 (20,25)
         String t4 = "Task#1 Test#4";
         System.out.println(":Expected Output: LCA(20,25)=25");
         Integer out4 = Task1.lowestCommonAncestor(root,20,25);
-        System.out.println(":  Your Output  : LCA(20,6)="+out4);
-        if(out==null || out!=25) failedPrint(t4);
+        System.out.println(":  Your Output  : LCA(20,25)="+out4);
+        if(out4==null || out4!=25) failedPrint(t4);
         else successPrint(t4);
-         System.out.println("------------------------------");
-         // Test Case 5 (10,12)
-         // TO DO
+        // TO DO
+        System.out.println("------------------------------");
+        // Test Case 5 (10,12)
         String t5 = "Task#1 Test#5";
         System.out.println(":Expected Output: LCA(10,12)=10");
         Integer out5 = Task1.lowestCommonAncestor(root,10,12);
-        System.out.println(":  Your Output  : LCA(20,6)="+out5);
-        if(out==null || out!=10) failedPrint(t4);
+        System.out.println(":  Your Output  : LCA(10,12)="+out5);
+        if(out5==null || out5!=10) failedPrint(t5);
         else successPrint(t5);
-         System.out.println("------------------------------");
+        // TO DO
+        System.out.println("------------------------------");
     }
     
     public static void task2(){
